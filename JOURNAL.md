@@ -50,3 +50,17 @@ Overall it all went fairly smoothly and the UI looks decent. Also I like the sou
 
 (btw it broke down at one point cause I wrote apped instead of append 🥲  << that was pretty annoying)   
 
+## 10/23/2025 11 PM - We've got GAMES! 👽👾  
+
+Date: October 23, 2025 [DAY 2]
+Time: 11:00 PM
+
+Tonight I created a space invaders game for my hologram. I used some pre-made assets from the internet for the aliens and the player. I implemented sounds for shooting like lasers etc... 
+
+So far it went pretty well. I plan on adding a brick breaker game tomorrow.
+
+Also I managed to get the home button and shooting mechanics working. But for some reason the aliens arent moving yet :(
+
+Anyways it was a productive night I hope to get both the games finished by tomorrow evening so I can start working on adding ![Screenshot 2025-10-23 230616.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDgwOSwicHVyIjoiYmxvYl9pZCJ9fQ==--034d2025f1e3c055dc4ba1f2fa1c81501c0a1a36/Screenshot%202025-10-23%20230616.png)
+an app to listen to music while working! (Spotify :D)  
+
