@@ -90,5 +90,111 @@ def space_invaders(screen):
         pygame.display.flip()
         pygame.time.delay(10)
 
-'''def brick_breaker(screen):'''
-    # Continue with brick breaker 24/12/2025
+
+def brick_breaker(screen):
+    paddle = pygame.Rect(SCREEN_WIDTH//2 - 75, SCREEN_HEIGHT - 50, 150, 20)
+    ball = pygame.Rect(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 2, 20, 20)
+    ball_dx,ball_dy = 7,-7
+
+
+    bricks = [pygame.Rect(320+col*125,50+row*30,120,25)for row in range(5) for col in range(10)]
+
+
+    home_button_center = (100,SCREEN_HEIGHT-100)
+    home_button_radius = 50
+    running = True
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                x,y = map_coords(*event.pos)
+                if math.hypot(x - home_button_center[0], y - home_button_center[1]) <= home_button_radius:
+                    running = False
+                else:
+                    paddle.centerx = x
+
+
+        ball.x += ball_dx
+        ball.y += ball_dy
+
+
+        screen.fill(BLACK)
+        pygame.draw.rect(screen,WHITE,paddle)
+        pygame.draw.ellipse(screen,BLUE,ball)
+        for brick in bricks:
+            pygame.draw.rect(screen,RED,brick)
+
+
+        pygame.draw.circle(screen,NAVY_BLUE,home_button_center,home_button_radius)
+        pygame.draw.circle(screen,WHITE,home_button_center,home_button_radius,5)
+        font = pygame.font.Font(None, 36)
+        text_surface = font.render('Home',True,WHITE)
+        screen.blit(text_surface,text_surface.get_rect(center=home_button_center))
+
+        pygame.display.flip()
+        pygame.time.delay(10)
+
+
+def run(screen):
+    running = True
+    circle_radius = 100
+    space_invaders_button_center = (SCREEN_WIDTH//3, SCREEN_HEIGHT//2)
+    brick_breaker_button_center = (2*SCREEN_WIDTH//3, SCREEN_HEIGHT//2)
+    home_button_center = (50+circle_radius,SCREEN_HEIGHT-50-circle_radius)
+
+
+    space_invaders_img = pygame.image.load("./apps/app_3/space_invaders.jpg")
+    space_invaders_img = pygame.transform.scale(space_invaders_img,(2*circle_radius,2*circle_radius))
+
+    brick_breaker_img = pygame.image.load("./apps/app_3/brick_breaker.jpg")
+    brick_breaker_img = pygame.transform.scale(brick_breaker_img,(2*circle_radius,2*circle_radius))
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                x,y = map_coords(*event.pos)
+
+
+                if math.hypot(x - space_invaders_button_center[0], y - space_invaders_button_center[1]) <= circle_radius:
+                    play_sound('./apps/app_3/game_start.mp3')
+                    space_invaders(screen)
+
+                elif math.hypot(x - brick_breaker_button_center[0], y - brick_breaker_button_center[1]) <= circle_radius:
+                    play_sound('./apps/app_3/game_start.mp3')   
+                    brick_breaker(screen)
+
+                elif math.hypot(x - home_button_center[0], y - home_button_center[1]) <= circle_radius:
+                    play_sound('./apps/app_3/back.wav')
+                    running = False
+
+
+        screen.fill(BLACK)
+
+
+        screen.blit(space_invaders_img, (space_invaders_button_center[0]-circle_radius, space_invaders_button_center[1]-circle_radius))
+        pygame.draw.circle(screen,WHITE,space_invaders_button_center,circle_radius,5)
+
+
+        screen.blit(brick_breaker_img, (brick_breaker_button_center[0]-circle_radius, brick_breaker_button_center[1]-circle_radius))
+        pygame.draw.circle(screen,WHITE,brick_breaker_button_center,circle_radius,5)
+
+
+        pygame.draw.circle(screen,NAVY_BLUE,home_button_center,circle_radius)
+        pygame.draw.circle(screen,WHITE,home_button_center,circle_radius,5)
+        font = pygame.font.Font(None, 36)
+        text_surface = font.render('Home',True,WHITE)
+        screen.blit(text_surface,text_surface.get_rect(center=home_button_center))
+
+        pygame.display.flip()
+        pygame.time.delay(50)
+
+if __name__ == '__main__':
+    screen = pygame.display.set_mode(SCREEN_SIZE)
+    pygame.display.set_caption('Arcade')
+    run(screen)
