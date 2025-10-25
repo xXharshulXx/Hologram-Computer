@@ -12,10 +12,15 @@ mixer = pygame.mixer
 mixer.init()
 
 
-SCREEN_WIDTH = int(os.getenv(1920))
-SCREEN_HEIGHT = int(os.getenv(1080))
+'''SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
+SCREEN_WIDTH = int(os.getenv('SCREEN_WIDTH',1920))
+SCREEN_HEIGHT = int(os.getenv('SCREEN_HEIGHT',1080))
+SCREEN_SIZE = (SCREEN_WIDTH,SCREEN_HEIGHT)'''
+info = pygame.display.Info()  # Get monitor info
+SCREEN_WIDTH = info.current_w
+SCREEN_HEIGHT = info.current_h
 SCREEN_SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
-
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)

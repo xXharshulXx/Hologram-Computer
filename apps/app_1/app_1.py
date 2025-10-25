@@ -11,19 +11,27 @@ load_dotenv()
 pygame.init()
 
 mixer.init()
-SCREEN_WIDTH = int(os.getenv(1920))
-SCREEN_HEIGHT = int(os.getenv(1080))
-SCREEN_SIZE = (SCREEN_WIDTH,SCREEN_HEIGHT)
+'''SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
+SCREEN_WIDTH = int(os.getenv('SCREEN_WIDTH',1920))
+SCREEN_HEIGHT = int(os.getenv('SCREEN_HEIGHT',1080))
+SCREEN_SIZE = (SCREEN_WIDTH,SCREEN_HEIGHT)'''
+info = pygame.display.Info()  # Get monitor info
+SCREEN_WIDTH = info.current_w
+SCREEN_HEIGHT = info.current_h
+SCREEN_SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
+
 BLACK = (0,0,0)
 LIGHT_BLUE = (173,216,230)
 WHITE = (255,255,255)
 NAVY_BLUE = (20,20,40)
-PIXEL_TO_MM = 0.4478 # Caliberate
+PIXEL_TO_MM = 0.2239   # Caliberate
 
 def map_coords(x,y):
-    mapped_x = (y/1080) * 1920
-    mapped_y = 1080 - ((x/1920) * 1080)
-    return int(mapped_x),int(mapped_y)
+    #mapped_x = (y/SCREEN_HEIGHT) * SCREEN_WIDTH
+    #mapped_y = SCREEN_HEIGHT - ((x/SCREEN_WIDTH) * SCREEN_HEIGHT)
+    #return int(mapped_x),int(mapped_y)
+    return x,y
 
 def distance(p1,p2):
     return math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
