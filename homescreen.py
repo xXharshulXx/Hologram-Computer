@@ -12,8 +12,8 @@ pygame.init()
 
 
 mixer.init()
-SCREEN_WIDTH = int(os.getenv('SCREEN_WIDTH'))
-SCREEN_HEIGHT = int(os.getenv('SCREEN_HEIGHT'))
+SCREEN_WIDTH = int(os.getenv(1920))
+SCREEN_HEIGHT = int(os.getenv(1080))
 SCREEN_SIZE = (SCREEN_WIDTH,SCREEN_HEIGHT)
 NAVY_BLUE = (20,20,40) #Primary Color
 LIGHT_BLUE = (173,216,230) #Secondary Color
