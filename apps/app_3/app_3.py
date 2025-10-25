@@ -37,9 +37,9 @@ def play_sound(file_path):
 
 
 def map_coords(x,y):
-    mapped_x = (y/1080) * 1920
-    mapped_y = 1080 - ((x/1920) * 1080)
-    return int(mapped_x),int(mapped_y)
+    '''mapped_x = (y/1080) * 1920
+    mapped_y = 1080 - ((x/1920) * 1080)'''
+    return x,y
 
 
 def space_invaders(screen):

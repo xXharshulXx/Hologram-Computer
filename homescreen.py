@@ -102,9 +102,9 @@ class AppCircle:
         return math.hypot(pos[0] - self.center[0], pos[1] - self.center[1]) <= self.radius
 
 def map_coords(x, y):
-    mapped_x = (y / 1080) * 1920
-    mapped_y = 1080 - ((x / 1920) * 1080)
-    return mapped_x, mapped_y
+    '''mapped_x = (y / 1080) * 1920
+    mapped_y = 1080 - ((x / 1920) * 1080)'''
+    return x, y
 
 def create_circles():
     circles = []
