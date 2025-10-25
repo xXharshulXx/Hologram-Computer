@@ -63,7 +63,7 @@ Also I managed to get the home button and shooting mechanics working. But for so
 
 Anyways it was a productive night I hope to get both the games finished by tomorrow evening so I can start working on adding an app to listen to music while working(Spotify :D)![Screenshot 2025-10-23 230616.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDgwOSwicHVyIjoiYmxvYl9pZCJ9fQ==--034d2025f1e3c055dc4ba1f2fa1c81501c0a1a36/Screenshot%202025-10-23%20230616.png)  
 
-## 10/25/2025 - Game #2 Is Complete! 🥳🥳  
+## 10/25/2025 2 AM - Game #2 Is Complete! 🥳🥳  
 
 Date: October 25, 2025 [DAY 3]
 Time: 02:00 AM
@@ -73,5 +73,20 @@ Tonight I created a brick breaker game for my hologram.
 So far it went pretty well.
 
 Anyways it was a productive night... However unfortunately I didn't meet my expectations nor my targets for today since I didn't work at all today :( [October 24, 2025] since I expected to finish this... Anyways some progress is better than no progress. Tomorrow for sure I'm gonna work on the music app so I can work in peace!![Screenshot 2025-10-25 020437](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NTIyMiwicHVyIjoiYmxvYl9pZCJ9fQ==--3086b1546e43565f5a13ff50a24298870252078a/Screenshot%202025-10-25%20020437.png)
+  
+
+## 10/25/2025 11 PM - Keyboard & Speech Input  
+
+Date: October 25, 2025 [DAY 3]
+Time: 11:30 PM
+
+Today I worked on implementing a keyboard and Speech Input for ease of use. This allows us to input text without the use of a physical keyboard. Either we can speak it into existence or we can type it on the Hologram. This will be helpful when searching for stuff, renaming files, saving files etc...
+
+Also I implemented sound effects whenever we press a button this will hopefully make it satisfying to type on air.
+
+It was fairly easy and quick
+
+EXCEPT I SPENT AN HOUR TRYING TO INSTALL RealTimeSTT ;-;
+![Screenshot 2025-10-25 232522](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NTQ2NywicHVyIjoiYmxvYl9pZCJ9fQ==--0296f8fda7c0fc570a5eb1afcef4caeb64b7a388/Screenshot%202025-10-25%20232522.png)
   
 
